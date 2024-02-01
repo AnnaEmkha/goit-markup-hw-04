@@ -234,10 +234,7 @@ button:focus {
 .team-seaction {
   padding: 120px 0;
 }
-.team-seaction-conteiner {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
+
 .team-seaction-list {
   display: flex;
   flex-wrap: wrap;
