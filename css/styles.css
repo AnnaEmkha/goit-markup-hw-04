@@ -87,6 +87,8 @@ align-items: center;
 .header-link {
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .header-link:hover {
@@ -109,6 +111,7 @@ address {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 .contacts-link:hover {
@@ -119,11 +122,25 @@ address {
   color: #404bbf;
 }
 
+.current {
+position: relative;
+color: #404bbf;
+}
+.current::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
+
+}
 .header-navigation {
   display: flex;
   flex-grow: 1;
-    align-items: center;
-
+  align-items: center;
 }
 
 .contacts-list {
@@ -139,11 +156,17 @@ address {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #2e2f42;
-}
+  }
+
 .main-page-section {
-  background: #2e2f42;
-   padding: 188px 0;
+  background-color: #2e2f42;
+  padding: 188px 0;
+  background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
 }
 .main-title {
   color: #ffffff;
@@ -192,11 +215,6 @@ button:focus {
   padding: 120px 0;
 }
 
-.features-container {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
 .title {
   font-size: 36px;
   font-weight: 700;
@@ -212,13 +230,24 @@ button:focus {
   gap: 24px;
 }
 
+.feature-box-icon {
+  display: flex;
+  background-color: #F4F4FD;
+  border: 1px solid #8E8F99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  justify-content: center;
+  align-items: center;
+}
+
 .subtitle {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  margin-top: 32px;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -238,9 +267,8 @@ button:focus {
 .team-seaction-list {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 72px;
-  padding-bottom: 120px;
-  gap: 24px;
+ 
+    gap: 24px;
 
 }
 .team-member {
@@ -253,7 +281,7 @@ button:focus {
 }
 
 .team-seaction-text {
-  margin-bottom: 32px;
+  margin-bottom: 8px;
   text-align: center;
 }
 .team-seaction {
@@ -262,13 +290,33 @@ button:focus {
 .team-seaction-item {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
-/*portfolio*/
-.portfolio-section {
-  padding-top: 120px; 
-  padding-bottom: 120px;
+.social-links {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+  align-self: center;
+  padding-left: 16px;
+ }
+
+.social-links .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4D5AE5;
 }
+
+.icon {
+  fill: #FFFFFF;
+}
+
+
+/*portfolio*/
 .portfolio-container {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -279,10 +327,35 @@ button:focus {
   flex-wrap: wrap;
   gap: 48px 24px;
 }
+
 .portfolio-item {
   border: 1px solid #e7e9fc
   padding-bottom: 32px;
   width: calc((100% - 48px) / 3);
+}
+.portfolio-item:hover {
+ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+.portfolio-item:hover .overlay {
+  transform: rotateY(0);
+}
+.portfolio-item-anim{
+position: relative;
+overflow: hidden;
+}
+.overlay {
+  color: #f4f4fd;
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-content {
   padding: 32px 16px;
@@ -294,14 +367,24 @@ button:focus {
 footer {
   padding-top: 100px;
   padding-bottom: 100px;
-}
+  }
+
 .page-footer {
   background: #2e2f42;
   color: #f4f4fd;
+   
+}
+.footer-box {
+  display: flex;
+  justify-content: flex-start;
+  }
+.soc-icons-container {
+  margin-left: 120px;
 }
 .logo-footer-accent {
   color: #f4f4fd;
 }
+
 .body-text {
   color: #f4f4fd;
   letter-spacing: 0.02em;
@@ -309,7 +392,33 @@ footer {
   margin-top: 16px;
   max-width: 264px;
 }
+
 footer .logo {
   display: inline-block;
   margin-bottom: 16px;
 }
+
+.footer-text {
+ font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em; 
+  margin-bottom: 16px;
+}
+
+ .footer-social-links {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  align-self: center;
+ }
+
+ .footer-social-links .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4D5AE5;
+ }
