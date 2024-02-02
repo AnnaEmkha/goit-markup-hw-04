@@ -394,12 +394,12 @@ footer {
 }
 .footer-box {
   display: flex;
-  justify-content: baseline;
+  align-items: baseline;
   }
+
 .container-footer {
   margin-right: 120px;
-  align-items: baseline;
-}
+  }
 
 .logo-footer-accent {
   color: #f4f4fd;
